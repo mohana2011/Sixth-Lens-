@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: #faf9f7;
+  color: #111110;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fluid masonry grid. CSS multi-column gives true variable-height masonry
+   (unlike CSS Grid, which forces equal row heights); column-width scales
+   continuously with viewport width so column count is never breakpoint-based. */
+.photo-masonry {
+  column-width: clamp(140px, 22vw, 320px);
+  column-gap: clamp(4px, 1vw, 16px);
+}
+.photo-masonry > * {
+  break-inside: avoid;
+  margin-bottom: clamp(4px, 1vw, 16px);
+}
+
+/* Plain fluid grid (used for the admin uploader/reorder view, where equal-size
+   tiles are preferable). Auto-fill/minmax keeps the column count continuous
+   rather than snapping at fixed breakpoints. */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(110px, 18vw, 200px), 1fr));
+  gap: clamp(4px, 1vw, 12px);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-x {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.min-touch {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* On touch devices, controls that would otherwise rely on :hover to reveal
+   must be visible by default. */
+@media (hover: none), (pointer: coarse) {
+  .touch-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.dvh-screen {
+  height: 100vh;
+  height: 100dvh;
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .glass {
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    backdrop-filter: blur(12px) saturate(1.4);
+  }
+}
+.glass {
+  background: rgba(250, 249, 247, 0.72);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out;
+}

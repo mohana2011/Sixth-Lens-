@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { randomUUID } from 'crypto';
+// The global `File` isn't reliably defined in every Node runtime that can run
+// this route (it's version- and platform-dependent), so import it explicitly
+// from node:buffer instead of relying on `instanceof File` against a global.
+import { File } from 'buffer';
 import { query } from '@/lib/db';
 import { getAdminId } from '@/lib/session';
 import { putObject, r2Keys, publicUrl } from '@/lib/r2';

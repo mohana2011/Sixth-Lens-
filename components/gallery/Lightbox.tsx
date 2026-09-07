@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { PublicPhoto } from '@/lib/types';
+import HeartIcon from '@/components/icons/HeartIcon';
 
 const SWIPE_THRESHOLD = 50;
 const DISMISS_THRESHOLD = 90;
@@ -138,14 +139,12 @@ export default function Lightbox({
           {index + 1} / {photos.length}
         </span>
         <div className="flex gap-2">
-          <IconButton label={favorited ? 'Remove favorite' : 'Add favorite'} onClick={() => onToggleFavorite(photo.id)}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill={favorited ? '#ef4444' : 'none'}>
-              <path
-                d="M12 20s-7.5-4.6-10-9.2C.4 7.4 2.2 4 5.6 4c2 0 3.4 1 4.4 2.4C11 5 12.4 4 14.4 4c3.4 0 5.2 3.4 3.6 6.8C19.5 15.4 12 20 12 20z"
-                stroke={favorited ? '#ef4444' : 'currentColor'}
-                strokeWidth="1.6"
-              />
-            </svg>
+          <IconButton
+            label={favorited ? 'Remove favorite' : 'Add favorite'}
+            onClick={() => onToggleFavorite(photo.id)}
+            className={favorited ? '!text-red-500' : ''}
+          >
+            <HeartIcon filled={favorited} />
           </IconButton>
           <IconButton label="Download photo" onClick={() => onDownload(photo.id)}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

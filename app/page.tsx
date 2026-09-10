@@ -28,7 +28,7 @@ export default function HomePage() {
           alt=""
           fill
           priority
-          sizes="100vw"
+          unoptimized
           className="object-cover object-[35%_40%]"
         />
         <div className="absolute inset-0 bg-black/55" />

@@ -28,15 +28,8 @@ export default function StickyNav() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 safe-x sm:px-6">
-        <a href="#top" className="flex items-center gap-2">
+        <a href="#top" className="flex items-center">
           <Logo variant={solid ? 'black' : 'white'} size={32} />
-          <span
-            className={`font-serif text-lg tracking-wide transition-colors ${
-              solid ? 'text-ink' : 'text-white'
-            }`}
-          >
-            Sixth Lens
-          </span>
         </a>
 
         <nav className="hidden gap-8 sm:flex">

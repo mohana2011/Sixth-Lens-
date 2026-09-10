@@ -18,7 +18,7 @@ export default function AdminNav({ studioName }: { studioName: string }) {
     <header className="border-b border-line bg-white safe-top">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 safe-x sm:px-6">
         <Link href="/admin/dashboard" className="flex items-center gap-2">
-          <Logo variant="black" size={26} />
+          <Logo variant="black" size={26} showWordmark={false} />
           <span className="font-serif text-base text-ink">{studioName}</span>
         </Link>
         <nav className="flex items-center gap-4">

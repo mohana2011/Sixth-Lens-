@@ -52,7 +52,7 @@ export default function TopBar({
   return (
     <div className="sticky top-0 z-30 glass border-b border-line safe-top">
       <div className="flex items-center gap-3 px-3 py-2.5 safe-x sm:px-5">
-        <Logo variant="black" size={26} />
+        <Logo variant="black" size={26} showWordmark={false} />
         <div className="min-w-0 flex-1">
           <p className="truncate font-serif text-sm leading-tight text-ink sm:text-base">{title}</p>
           <p className="truncate text-[11px] leading-tight text-ink/50">{studioName}</p>

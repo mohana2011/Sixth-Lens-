@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Logo from '@/components/Logo';
 import StickyNav from '@/components/marketing/StickyNav';
 import GalleryAccessForm from '@/components/marketing/GalleryAccessForm';
@@ -22,13 +23,19 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="relative flex dvh-screen min-h-[560px] items-center justify-center overflow-hidden bg-ink">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.08),transparent_60%)]" />
+        <Image
+          src="/images/hero-wedding.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[35%_40%]"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.12),transparent_60%)]" />
         <div className="relative z-10 flex flex-col items-center px-6 text-center safe-x">
-          <Logo variant="white" size={72} className="mb-6" />
-          <h1 className="font-serif text-[clamp(2rem,6vw,4.5rem)] leading-tight text-white">
-            Sixth Lens
-          </h1>
-          <p className="mt-3 max-w-xl text-[clamp(0.95rem,2vw,1.25rem)] text-white/80">
+          <Logo variant="white" layout="col" size={160} className="mb-2" />
+          <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.25rem)] text-white/80">
             Photography that lingers. Weddings, portraits, and moments — delivered with care.
           </p>
           <a
@@ -114,7 +121,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="flex flex-col items-center gap-3 border-t border-line bg-paper px-6 py-12 text-center safe-x safe-bottom">
-        <Logo variant="black" size={28} />
+        <Logo variant="black" layout="col" size={40} />
         <p className="text-xs tracking-wide text-ink/50">
           &copy; {new Date().getFullYear()} Sixth Lens Photography. All rights reserved.
         </p>

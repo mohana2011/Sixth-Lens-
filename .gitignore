@@ -4,3 +4,6 @@ node_modules
 .env.local
 npm-debug.log*
 .DS_Store
+
+# Raw, unprocessed source photo (the optimized web copy lives in public/images/)
+/NKP01958.jpg

@@ -18,7 +18,7 @@ export default async function GalleryCoverPage({ params }: { params: { slug: str
     return (
       <main className="flex min-h-dvh items-center justify-center bg-ink px-6 text-center text-white">
         <div>
-          <Logo variant="white" size={48} className="mx-auto mb-6" />
+          <Logo variant="white" size={48} showWordmark={false} className="mx-auto mb-6" />
           <h1 className="font-serif text-2xl">This gallery link has expired</h1>
           <p className="mt-2 text-white/70">Please contact your photographer for a new link.</p>
         </div>
@@ -49,7 +49,7 @@ export default async function GalleryCoverPage({ params }: { params: { slug: str
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
       <div className="relative z-10 flex w-full flex-col items-center px-6 text-center safe-x safe-top safe-bottom">
-        <Logo variant="white" size={56} className="mb-6" />
+        <Logo variant="white" size={56} showWordmark={false} className="mb-6" />
         <p className="text-xs uppercase tracking-[0.3em] text-white/70">{gallery.studioName}</p>
         <h1 className="mt-3 font-serif text-[clamp(1.75rem,5vw,3.5rem)] text-white">
           {gallery.title}
